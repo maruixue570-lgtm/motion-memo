@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Motion Memo — 收藏、拆解与还原优秀前端动效。" />
+  <title>Motion Memo — 前端动效档案馆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Motion Memo 首页">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span>MOTION<br>MEMO</span>
+    </a>
+    <nav aria-label="主导航">
+      <a class="active" href="#library">档案库</a>
+      <a href="#workflow">共建方式</a>
+      <a href="#about">关于</a>
+    </nav>
+    <button class="add-button" id="addButton"><span>＋</span> 收录新动效</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow"><span></span> A LIVING MOTION ARCHIVE · 持续更新</p>
+      <h1>收藏灵感，<br><em>拆解每一帧。</em></h1>
+      <div class="hero-bottom">
+        <p>一个持续生长的前端动效档案馆。保存那些让人停下来的瞬间，也保存它们背后的实现方式。</p>
+        <a href="#library" class="scroll-link">浏览档案 <span>↓</span></a>
+      </div>
+      <div class="orbital" aria-hidden="true">
+        <div class="orbit orbit-a"><b></b></div>
+        <div class="orbit orbit-b"><b></b></div>
+        <div class="orbit orbit-c"><b></b></div>
+        <span class="orbital-label">MOTION<br>STUDY<br>№ 001</span>
+      </div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="section-heading">
+        <div><p class="index">/ 01</p><h2>动效档案</h2></div>
+        <p id="resultCount">6 个实验样本</p>
+      </div>
+      <div class="controls">
+        <div class="filters" role="group" aria-label="动效分类">
+          <button class="filter active" data-filter="all">全部</button>
+          <button class="filter" data-filter="micro">微交互</button>
+          <button class="filter" data-filter="scroll">滚动叙事</button>
+          <button class="filter" data-filter="transition">页面转场</button>
+          <button class="filter" data-filter="typography">文字动效</button>
+          <button class="filter" data-filter="3d">3D / WebGL</button>
+        </div>
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索标题、标签、技术…" /></label>
+      </div>
+
+      <div class="grid" id="motionGrid">
+        <article class="card featured" data-category="3d" data-search="orbital hover webgl css 3d 鼠标跟随">
+          <button class="card-open" aria-label="查看 Orbital Cursor 详情"></button>
+          <div class="preview preview-orbit">
+            <span class="preview-index">001</span><span class="status">已还原</span>
+            <div class="mini-orbit"><i></i><b></b><em></em></div>
+            <p>MOVE YOUR CURSOR</p>
+          </div>
+          <div class="card-meta"><div><h3>Orbital Cursor</h3><p>鼠标跟随 · 空间反馈</p></div><span>WebGL</span></div>
+        </article>
+
+        <article class="card" data-category="typography" data-search="kinetic type typography split text gsap 文字 动效">
+          <button class="card-open" aria-label="查看 Kinetic Type 详情"></button>
+          <div class="preview preview-type"><span class="preview-index">002</span><span class="status">已还原</span><div class="type-loop"><b>MOVE</b><b>MOVE</b><b>MOVE</b></div></div>
+          <div class="card-meta"><div><h3>Kinetic Type</h3><p>循环排版 · 错位节奏</p></div><span>GSAP</span></div>
+        </article>
+
+        <article class="card" data-category="micro" data-search="magnetic button micro interaction css 磁吸按钮 hover">
+          <button class="card-open" aria-label="查看 Magnetic Button 详情"></button>
+          <div class="preview preview-magnetic"><span class="preview-index">003</span><span class="status">已还原</span><button class="magnet-demo">ENTER <i>↗</i></button><div class="cursor-dot"></div></div>
+          <div class="card-meta"><div><h3>Magnetic Button</h3><p>悬停反馈 · 磁吸交互</p></div><span>CSS + JS</span></div>
+        </article>
+
+        <article class="card wide" data-category="scroll" data-search="parallax gallery scroll lenis gsap 视差 滚动 画廊">
+          <button class="card-open" aria-label="查看 Parallax Gallery 详情"></button>
+          <div class="preview preview-gallery"><span class="preview-index">004</span><span class="status draft">待完善</span><div class="gallery-strip"><i></i><i></i><i></i><i></i><i></i></div><p>SCROLL TO EXPLORE</p></div>
+          <div class="card-meta"><div><h3>Parallax Gallery</h3><p>滚动视差 · 横向画廊</p></div><span>Lenis + GSAP</span></div>
+        </article>
+
+        <article class="card" data-category="transition" data-search="page transition liquid svg clip path 页面 转场 液态">
+          <button class="card-open" aria-label="查看 Liquid Transition 详情"></button>
+          <div class="preview preview-liquid"><span class="preview-index">005</span><span class="status draft">待完善</span><div class="liquid-a"></div><div class="liquid-b"></div><b>A → B</b></div>
+          <div class="card-meta"><div><h3>Liquid Transition</h3><p>页面转场 · 液态遮罩</p></div><span>SVG</span></div>
+        </article>
+
+        <article class="card" data-category="micro" data-search="elastic toggle spring micro interaction 弹性 开关">
+          <button class="card-open" aria-label="查看 Elastic Toggle 详情"></button>
+          <div class="preview preview-toggle"><span class="preview-index">006</span><span class="status">已还原</span><button class="toggle-demo" aria-label="切换演示"><i></i></button><p>CLICK TO TOGGLE</p></div>
+          <div class="card-meta"><div><h3>Elastic Toggle</h3><p>状态切换 · 弹性曲线</p></div><span>CSS Spring</span></div>
+        </article>
+      </div>
+      <div class="empty" id="emptyState" hidden><span>∅</span><h3>没有匹配的动效</h3><p>换个关键词，或者开始收录一个新的样本。</p></div>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="section-heading"><div><p class="index">/ 02</p><h2>共建方式</h2></div><p>从灵感到可复用代码</p></div>
+      <div class="steps">
+        <article><span>01</span><div class="step-icon">↗</div><h3>你发送参考</h3><p>网站链接、录屏或截图都可以。告诉我你喜欢哪一段，以及希望保留的体验。</p></article>
+        <article><span>02</span><div class="step-icon">⌘</div><h3>我拆解还原</h3><p>分析时间曲线、触发方式和实现技术，写成独立、可维护的前端代码。</p></article>
+        <article><span>03</span><div class="step-icon">＋</div><h3>归档并分类</h3><p>补齐标签、技术栈、复杂度与来源，一键加入这个持续生长的动效库。</p></article>
+      </div>
+    </section>
+
+    <footer id="about"><div class="footer-logo">MOTION<br><em>MEMO</em></div><p>为那些值得被反复研究的瞬间，<br>建立一座可运行的档案馆。</p><div><span>CURATED WITH CURIOSITY</span><span>© 2026 · SHANGHAI</span></div></footer>
+  </main>
+
+  <dialog id="detailDialog">
+    <button class="dialog-close" aria-label="关闭">×</button>
+    <p class="eyebrow"><span></span> MOTION STUDY</p>
+    <h2 id="dialogTitle">Orbital Cursor</h2>
+    <p id="dialogDesc">鼠标跟随 · 空间反馈</p>
+    <div class="dialog-grid"><div><span>分类</span><b id="dialogCategory">3D / WebGL</b></div><div><span>实现</span><b id="dialogStack">WebGL</b></div><div><span>状态</span><b>实验样本</b></div></div>
+    <div class="code-lines"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="dialog-note">这是首版结构示意。之后每个收录条目都可以拥有独立演示页、源码、实现笔记与原始参考链接。</p>
+  </dialog>
+
+  <dialog id="addDialog" class="add-dialog">
+    <button class="dialog-close" aria-label="关闭">×</button><p class="eyebrow"><span></span> NEW ENTRY</p><h2>收录新动效</h2>
+    <p>把你看到的动效网站链接直接发到我们的对话里。我会负责拆解、还原、分类，并把它加入这里。</p>
+    <div class="message-mock"><span>01</span><p>发送链接 + 指出你喜欢的动效位置</p></div><div class="message-mock"><span>02</span><p>也可以附上录屏、截图或补充说明</p></div>
+    <button class="copy-prompt" id="copyPrompt">复制提交模板</button>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
